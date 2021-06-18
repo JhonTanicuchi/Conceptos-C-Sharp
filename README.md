@@ -1,2 +1,2 @@
 # ConsolaInicial
-Programa C# de consola, 'Hola Mundo'
+Programa C# consola, 10 Datos Personales POO
