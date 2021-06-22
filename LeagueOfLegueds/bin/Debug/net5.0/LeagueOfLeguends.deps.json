@@ -1,0 +1,36 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v5.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v5.0": {
+      "LeagueOfLeguends/1.0.0": {
+        "dependencies": {
+          "LeagueOfLeguends.Entidades": "1.0.0"
+        },
+        "runtime": {
+          "LeagueOfLeguends.dll": {}
+        }
+      },
+      "LeagueOfLeguends.Entidades/1.0.0": {
+        "runtime": {
+          "LeagueOfLeguends.Entidades.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "LeagueOfLeguends/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "LeagueOfLeguends.Entidades/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
