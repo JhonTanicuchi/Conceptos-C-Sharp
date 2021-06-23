@@ -90,11 +90,11 @@ namespace LeagueOfLeguends
                 )>
             {
                 ("Ashe", "Femenino","Tirador","ADC","Demacia","Hola",570,3.5,26,30,59,100,0.658,325,600,0,0,280,6.972,1800,1),
-                ("Garen", "Femenino","Tirador","TOP","Demacia","Hola",620,3.5,26,30,59,100,0.658,325,600,0,0,280,6.972,0,1),
-                ("Lux", "Femenino","Tirador","SUP, MID","Demacia","Hola",490,3.5,26,30,59,100,0.658,325,600,0,0,280,6.972,0,1),
-                ("Rammus", "Femenino","Tirador","JG","Demacia","Hola",564,3.5,26,30,59,100,0.658,325,600,0,0,280,6.972,0,1),
-                ("Tryndamere", "Femenino","Tirador","TOP, JG","Demacia","Hola",626,3.5,26,30,59,100,0.658,325,600,0,0,280,6.972,0,1),
-                ("Warwick", "Femenino","Tirador","ADC","TOP, JG","Hola",550,3.5,26,30,59,100,0.658,325,600,0,0,280,6.972,0,1),
+                ("Garen", "Masulino","Luchador","TOP","Demacia","Hola",620,3.5,26,30,59,100,0.658,325,600,0,0,280,6.972,0,1),
+                ("Lux", "Femenino","Mago","SUP,MID","Demacia","Hola",490,3.5,26,30,59,100,0.658,325,600,0,0,280,6.972,0,1),
+                ("Rammus", "Masculino","Tanque","JG","Demacia","Hola",564,3.5,26,30,59,100,0.658,325,600,0,0,280,6.972,0,1),
+                ("Tryndamere", "Masculino","Luchador","TOP,JG","Demacia","Hola",626,3.5,26,30,59,100,0.658,325,600,0,0,280,6.972,0,1),
+                ("Warwick", "Masculino","Luchador","TOP,JG","Demacia","Hola",550,3.5,26,30,59,100,0.658,325,600,0,0,280,6.972,0,1),
             };
 
            
@@ -125,6 +125,13 @@ namespace LeagueOfLeguends
             {               
                 Console.WriteLine("Ingresa un indice correcto");
             }
+
+
+            var mapa = new Mapa
+            {
+                Nombre = "Grieta del Invocador",
+                Lineas = 3
+            };
 
 
             var campeonElegido = new Campeon
@@ -218,12 +225,25 @@ namespace LeagueOfLeguends
 
 
             Console.Clear();
-            Console.WriteLine($"{(campeonElegido.Nombre).PadRight(30)} {(campeonEnemigo.Nombre).PadLeft(26)}");
-            Console.WriteLine($"{new string('▓', 20) + " " + campeonElegido.Vida} {(campeonEnemigo.Vida + " " + new string('▓', 20)).PadLeft(31)}");
-            Console.WriteLine($"\n{(campeonElegido.Nombre.ToUpper() + " (Tú)").PadRight(30)} {(campeonEnemigo.Nombre.ToUpper()).PadLeft(26)}");
-            Console.WriteLine($"{(campeonElegido.Nivel).ToString().PadRight(30)} {(campeonEnemigo.Nivel).ToString().PadLeft(26)}");
-            Console.WriteLine($"{(campeonElegido.Experiencia).ToString().PadRight(30)} {(campeonEnemigo.Experiencia).ToString().PadLeft(26)}");
-            Console.WriteLine($"{(campeonElegido.Mana).ToString().PadRight(30)} {(campeonEnemigo.Mana).ToString().PadLeft(26)}");
+            Console.WriteLine(string.Format("{0}", mapa.Nombre.ToUpper().PadLeft(39)));
+            Console.WriteLine(string.Format("{0}\n", "(mapa)".PadLeft(32)));
+            Console.WriteLine(string.Format("{0}vida", "vida".PadRight(53)));
+            Console.WriteLine(string.Format("{0} {1}", new string('▓', 20) + " " + campeonElegido.Vida, (campeonEnemigo.Vida + " " + new string('▓', 20)).PadLeft(32)));
+            Console.WriteLine(string.Format("\n{0} {1}", (campeonElegido.Nombre.ToUpper() + " (Tú)").PadRight(30), (campeonEnemigo.Nombre.ToUpper()).PadLeft(26)));
+            Console.WriteLine(string.Format("{0} {1}", new string('─', 20), new string('─', 20).PadLeft(36)));
+            Console.WriteLine(string.Format("{0}│ {1}{2}│ {3}", "Nivel:".PadRight(15), campeonElegido.Nivel.ToString().PadRight(20), "Nivel:".PadRight(15), campeonEnemigo.Nivel.ToString().PadRight(5)));
+            Console.WriteLine(string.Format("{0}│ {1}{2}│ {3}", "Experiencia:".PadRight(15), campeonElegido.Experiencia.ToString().PadRight(20), "Experiencia:".PadRight(15), campeonEnemigo.Experiencia.ToString().PadRight(5)));
+            Console.WriteLine(string.Format("{0}│ {1}{2}│ {3}", "Mana:".PadRight(15), campeonElegido.Mana.ToString().PadRight(20), "Mana:".PadRight(15), campeonEnemigo.Mana.ToString().PadRight(5)));
+            Console.WriteLine(string.Format("{0} {1}", new string('─', 20), new string('─', 20).PadLeft(36)));
+            Console.WriteLine(string.Format("\n{0} {1}", "Propiedades".PadRight(30), "Propiedades".PadLeft(26)));
+            Console.WriteLine(string.Format("{0} {1}", new string('─', 20), new string('─', 20).PadLeft(36)));
+            Console.WriteLine(string.Format("{0}│ {1}{2}│ {3}", "Armadura:".PadRight(15), campeonElegido.Armadura.ToString().PadRight(20), "Armadura:".PadRight(15), campeonEnemigo.Armadura.ToString().PadRight(5)));
+            Console.WriteLine(string.Format("{0}│ {1}{2}│ {3}", "Resistencia M:".PadRight(15), campeonElegido.ResistenciaMagica.ToString().PadRight(20), "Resistencia M:".PadRight(15), campeonEnemigo.ResistenciaMagica.ToString().PadRight(5)));
+            Console.WriteLine(string.Format("{0}│ {1}{2}│ {3}", "Daño Ataque:".PadRight(15), campeonElegido.DañoAtaque.ToString().PadRight(20), "Daño Ataque:".PadRight(15), campeonEnemigo.DañoAtaque.ToString().PadRight(5)));
+            Console.WriteLine(string.Format("{0}│ {1}{2}│ {3}", "Daño Crítico:".PadRight(15), campeonElegido.DañoCritico.ToString().PadRight(20), "Daño Crítico:".PadRight(15), campeonEnemigo.DañoCritico.ToString().PadRight(5)));
+            Console.WriteLine(string.Format("{0}│ {1}{2}│ {3}", "Velocidad Atq:".PadRight(15), campeonElegido.VelocidadAtaque.ToString().PadRight(20), "Velocidad Ata:".PadRight(15), campeonEnemigo.VelocidadAtaque.ToString().PadRight(5)));
+            Console.WriteLine(string.Format("{0}│ {1}{2}│ {3}", "Velocidad Mov:".PadRight(15), campeonElegido.VelocidadMovimiento.ToString().PadRight(20), "Velocidad Mov:".PadRight(15), campeonEnemigo.VelocidadMovimiento.ToString().PadRight(5)));
+
             campeonElegido.SubirNivel();
             Console.ReadLine();
         }
