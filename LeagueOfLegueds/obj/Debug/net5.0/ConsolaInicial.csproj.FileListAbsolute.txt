@@ -1,5 +1,0 @@
-E:\Carrera Desarrollo de Software\C# 3er\ConsolaInicial Repo\ConsolaInicial\ConsolaInicial\obj\Debug\net5.0\ConsolaInicial.csproj.AssemblyReference.cache
-E:\Carrera Desarrollo de Software\C# 3er\ConsolaInicial Repo\ConsolaInicial\ConsolaInicial\obj\Debug\net5.0\ConsolaInicial.GeneratedMSBuildEditorConfig.editorconfig
-E:\Carrera Desarrollo de Software\C# 3er\ConsolaInicial Repo\ConsolaInicial\ConsolaInicial\obj\Debug\net5.0\ConsolaInicial.AssemblyInfoInputs.cache
-E:\Carrera Desarrollo de Software\C# 3er\ConsolaInicial Repo\ConsolaInicial\ConsolaInicial\obj\Debug\net5.0\ConsolaInicial.AssemblyInfo.cs
-E:\Carrera Desarrollo de Software\C# 3er\ConsolaInicial Repo\ConsolaInicial\ConsolaInicial\obj\Debug\net5.0\ConsolaInicial.csproj.CoreCompileInputs.cache
