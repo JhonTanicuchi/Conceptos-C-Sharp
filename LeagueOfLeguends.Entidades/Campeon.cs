@@ -61,11 +61,8 @@ namespace LeagueOfLeguends.Entidades
             else if (Experiencia >= (xp - (patron - 100)) - (patron - 200) && Experiencia < xp && Experiencia < 1)
             { 
                 while (Experiencia >= (xp - (patron - 100)) - (patron - 200) && Experiencia < xp)
-                {
-                    patron = patron - 100;
-                    patron = patron - 100;
-                    xp -= patron - 100;
-                    xp -= patron;
+                {                          
+                    xp = (xp - (patron - 100)) - (patron - 200);
                     Nivel -= 1;
                 }
             }
