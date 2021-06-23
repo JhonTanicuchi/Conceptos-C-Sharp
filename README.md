@@ -7,4 +7,4 @@ Simulación de videojuego "League Of Leguends", El programa permite seleccionar 
 
 Permitirá ingresar un valor de experiencia para visualizar el proceso de evolución de propiedades de cada campeón y mejoras por nivel.
 
-Nota: "Los archivos del programa se encuentran en la rama Master"
+Nota: "Los archivos del programa se encuentran en la rama master"
