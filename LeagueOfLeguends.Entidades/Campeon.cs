@@ -46,15 +46,28 @@ namespace LeagueOfLeguends.Entidades
 
         public void SubirNivel()
         {
-            while (Experiencia >= xp && Nivel >= 1 && Nivel <= 18)
+            if (Experiencia >= xp && Nivel >= 1 && Nivel <= 18)
             {
-                
-                if (Experiencia >= xp)
+                while (Experiencia >= xp && Nivel >= 1 && Nivel <= 18)
                 {
-                    Nivel = Nivel + 1;
-                    xp = xp + (patron);
-                    patron = patron + 100;
-                }                       
+                    if (Experiencia >= xp)
+                    {
+                        Nivel = Nivel + 1;
+                        xp += patron;
+                        patron += 100;
+                    }
+                }
+            }
+            else if (Experiencia >= (xp - (patron - 100)) - (patron - 200) && Experiencia < xp && Experiencia < 1)
+            { 
+                while (Experiencia >= (xp - (patron - 100)) - (patron - 200) && Experiencia < xp)
+                {
+                    patron = patron - 100;
+                    patron = patron - 100;
+                    xp -= patron - 100;
+                    xp -= patron;
+                    Nivel -= 1;
+                }
             }
         }
     }
