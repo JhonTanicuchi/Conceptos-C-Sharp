@@ -260,10 +260,11 @@ namespace LeagueOfLeguends
                 Console.WriteLine($"{new string('─', 57)}");
                 Console.WriteLine("CONOCE LA EVOLUCIÓN DE LOS CAMPEONES".PadLeft(47));
                 Console.WriteLine($"{new string('─', 57)}");
-                Console.WriteLine("NOTA: Rangos de experiancia 280 -> 18360\n");
-                Console.WriteLine("Ingresa un valor de experiencia para (tu campeon):");
+                Console.WriteLine("Experiencia para (tu campeon)".PadLeft(44));
+                Console.WriteLine($"Ingresa un valor mayor a {campeonElegido.xp -100}:");
                 var experienciaElegido = Console.ReadLine();
-                Console.WriteLine("Ingresa un valor de experiencia para (el enemigo):");
+                Console.WriteLine("Experiencia para (el enemigo)".PadLeft(44));
+                Console.WriteLine($"Ingresa un valor mayor a {campeonEnemigo.xp -100}:");
                 var experienciaEnemigo = Console.ReadLine();
                 campeonElegido.Experiencia = int.Parse(experienciaElegido);
                 campeonEnemigo.Experiencia = int.Parse(experienciaEnemigo);

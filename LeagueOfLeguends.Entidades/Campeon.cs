@@ -17,8 +17,8 @@ namespace LeagueOfLeguends.Entidades
         double nivel;
 
 
-        int xp = 280;
-        int patron = 380;
+        public int xp = 280;
+        public int patron = 380;
 
         public string Origen { get { return origen; } set { origen = value; } }
         public string Genero { get { return genero; } set { genero = value; } }
@@ -45,27 +45,13 @@ namespace LeagueOfLeguends.Entidades
 
 
         public void SubirNivel()
-        {
-            if (Experiencia >= xp && Nivel >= 1 && Nivel <= 18)
-            {
-                while (Experiencia >= xp && Nivel >= 1 && Nivel <= 18)
-                {
-                    if (Experiencia >= xp)
-                    {
-                        Nivel = Nivel + 1;
-                        xp += patron;
-                        patron += 100;
-                    }
-                }
-            }
-            else if (Experiencia >= (xp - (patron - 100)) - (patron - 200) && Experiencia < xp && Experiencia < 1)
-            { 
-                while (Experiencia >= (xp - (patron - 100)) - (patron - 200) && Experiencia < xp)
-                {                          
-                    xp = (xp - (patron - 100)) - (patron - 200);
-                    Nivel -= 1;
-                }
-            }
+        {           
+            while (Experiencia >= xp && Nivel >= 1 && Nivel <= 18)
+            {               
+                Nivel = Nivel + 1;
+                xp += patron;
+                patron += 100;               
+            }          
         }
     }
 }
