@@ -18,12 +18,24 @@ namespace Arbol2
         public List<Nodo> Nodos { get; internal set; } = new List<Nodo>();
 
 
-        public Nodo() {}
+        public Nodo() { }
 
 
         public Nodo(string valor)
         {
             Valor = valor;
-        }      
+        }
+
+
+        public void OperacionNodo(Nodo nodo)
+        {
+            if (nodo == null)
+                return;
+
+            OperacionNodo(nodo.Izquierdo);
+            Console.WriteLine(nodo.Valor);
+            OperacionNodo(nodo.Derecho);
+        }
+
     }
 }

@@ -6,7 +6,7 @@ namespace Arbol2
     class Program
     {
         static void Main(string[] args)
-        {           
+        {
             var raiz = new Nodo
             {
                 Valor = "*",
@@ -20,15 +20,13 @@ namespace Arbol2
                 Derecho = new Nodo()
                 {
                     Valor = "+",
-                    Izquierdo = new Nodo("7"),                 
-                    Derecho = new Nodo("5")                    
+                    Izquierdo = new Nodo("7"),
+                    Derecho = new Nodo("4")
                 }
             };
+           
 
-            var suma1 = int.Parse(raiz.Izquierdo.Izquierdo.Valor) + int.Parse(raiz.Izquierdo.Derecho.Valor);
-            var suma2 = int.Parse(raiz.Derecho.Izquierdo.Valor) + int.Parse(raiz.Derecho.Derecho.Valor);
-            var multiplicacion = suma1 * suma2;
-            Console.WriteLine(multiplicacion);
+            raiz.OperacionNodo(raiz);         
         }
     }
 }
