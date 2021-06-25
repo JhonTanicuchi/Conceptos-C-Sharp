@@ -24,9 +24,9 @@ namespace Arbol2
                     Derecho = new Nodo("4")
                 }
             };
-           
+                
+            Console.WriteLine(raiz.OperacionNodo(raiz));
 
-            raiz.OperacionNodo(raiz);         
         }
     }
 }

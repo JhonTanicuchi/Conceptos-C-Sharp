@@ -6,8 +6,6 @@ namespace Arbol2
     class Nodo
     {
         private string _valor;
-
-
         public string Valor
         {
             get { return _valor; }
@@ -15,7 +13,6 @@ namespace Arbol2
         }
         public Nodo Izquierdo { get; set; }
         public Nodo Derecho { get; set; }
-        public List<Nodo> Nodos { get; internal set; } = new List<Nodo>();
 
 
         public Nodo() { }
@@ -27,15 +24,17 @@ namespace Arbol2
         }
 
 
-        public void OperacionNodo(Nodo nodo)
+        public string valoresNodos;
+        public string OperacionNodo(Nodo nodo)
         {
             if (nodo == null)
-                return;
+                return "Null";
 
             OperacionNodo(nodo.Izquierdo);
-            Console.WriteLine(nodo.Valor);
+            valoresNodos += nodo.Valor;
             OperacionNodo(nodo.Derecho);
-        }
 
+            return nodo.valoresNodos;
+        }
     }
 }
