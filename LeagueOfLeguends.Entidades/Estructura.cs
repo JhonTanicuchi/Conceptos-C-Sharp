@@ -2,8 +2,6 @@
 {
     public class Estructura
     {
-        string tipo;
-        
-        internal string Tipo { get { return tipo; } set { tipo = value; } }
+        internal string Tipo { get; set; }
     }
 }

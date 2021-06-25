@@ -37,41 +37,14 @@ namespace LeagueOfLeguends
                 Environment.Exit(0);
             }
 
-
-            var Habilidades = new List
-                <(
-                string tecla,
-                string nombre,
-                string descripcion,
-                double daño,
-                double rango,
-                double radio,
-                double costoMana,
-                double enfriamiento,
-                double velocidad
-                )>
-            {
-                ("q","Concentración de la Guardabosques",
-                "Ashe gana velocidad de ataque durante 4 segundos y hace que cada uno de sus ataques básicos dispare una ráfaga de cinco flechas."
-                ,21,0,0,50,20,0), 
-                ("w","Descarga","Ashe dispara flechas en forma de cono en la dirección del objetivo"
-                ,22,1200,0,70,14,2000), 
-                ("e","Tiro de Halcón",
-                "Ashe envía un espíritu de halcón hacia la ubicación de destino, revelando el área a lo largo de su camino durante 2 segundos"
-                ,0,1000,0,5,0,1400), 
-                ("r","Flecha de Cristal Encantada",
-                "Ashe dispara un Enchanted Crystal Arrow Minimap.png misil de hielo en la dirección del objetivo."
-                ,200,0,1025,100,100,1600),     
-            };
-
             var campeones = new List
                 <(
                 string Nombre, 
                 string Genero, 
                 string Rol, 
                 string Posicion, 
-                string Origen, 
-                string Frase, 
+                string Origen,              
+                string Raza,
                 int Vida, 
                 double RegeneracionVida, 
                 double Armadura, 
@@ -89,12 +62,12 @@ namespace LeagueOfLeguends
                 double Nivel
                 )>
             {
-                ("Ashe", "Femenino","Tirador","ADC","Demacia","Hola",570,3.5,26,30,59,100,0.65,325,600,0,0,280,6.97,0,1),
-                ("Garen", "Masulino","Luchador","TOP","Demacia","Hola",620,3.5,26,30,59,100,0.65,325,600,0,0,280,6.97,0,1),
-                ("Lux", "Femenino","Mago","SUP,MID","Demacia","Hola",490,3.5,26,30,59,100,0.65,325,600,0,0,280,6.97,0,1),
-                ("Rammus", "Masculino","Tanque","JG","Demacia","Hola",564,3.5,26,30,59,100,0.65,325,600,0,0,280,6.97,0,1),
-                ("Tryndamere", "Masculino","Luchador","TOP,JG","Demacia","Hola",626,3.5,26,30,59,100,0.65,325,600,0,0,280,6.97,0,1),
-                ("Warwick", "Masculino","Luchador","TOP,JG","Demacia","Hola",550,3.5,26,30,59,100,0.65,325,600,0,0,280,6.972,0,1),
+                ("Ashe", "Femenino","Tirador","ADC","Demacia","Humana",570,3.5,26,30,59,100,0.65,325,600,0,0,280,6.97,0,1),
+                ("Garen", "Masulino","Luchador","TOP MID","Demacia","Humano",620,8,36,32,66,175,0.62,340,65,0,0,0,0,0,1),
+                ("Lux", "Femenino","Mago","SUP,MID","Demacia","Humana",490,3.5,26,30,59,100,0.65,325,600,0,0,280,6.97,0,1),
+                ("Rammus", "Masculino","Tanque","JG","Shurima","Armadurillo",564,3.5,26,30,59,100,0.65,325,600,0,0,280,6.97,0,1),
+                ("Tryndamere", "Masculino","Luchador","TOP,JG","Fréljord","Humano",626,3.5,26,30,59,100,0.65,325,600,0,0,280,6.97,0,1),
+                ("Warwick", "Masculino","Luchador","TOP,JG","Zaun","Lobo",550,3.5,26,30,59,100,0.65,325,600,0,0,280,6.972,0,1)
             };
 
            

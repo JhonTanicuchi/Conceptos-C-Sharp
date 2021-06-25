@@ -5,37 +5,24 @@ namespace LeagueOfLeguends.Entidades
 {
     public class Campeon : Personaje
     {    
-        string genero;
-        string rol;
-        string posicion;
-        string origen;
-        string frase;     
-        double mana;
-        double regeneracionMana;     
-        double dañoCritico;
-        double experiencia;
-        double nivel;
+        public string Raza { get; set; }
+        public string Origen { get; set; }
+        public string Genero { get; set; }
+        public string Rol { get; set; }
+        public string Posicion { get; set; }
+        public string Frase { get; set; }
+        public int Mana { get; set; }
+        public double RegeneracionMana { get; set; }
+        public double DañoCritico { get; set; }
 
-
-        public int xp = 280;
-        public int patron = 380;
-
-        public string Origen { get { return origen; } set { origen = value; } }
-        public string Genero { get { return genero; } set { genero = value; } }
-        public string Rol { get { return rol; } set { rol = value; } }
-        public string Posicion { get { return posicion; } set { posicion = value; } }
-        public string Frase { get { return frase; } set { frase = value; } }
-        public double Mana { get { return mana; } set { mana = value; } }
-        public double RegeneracionMana { get { return regeneracionMana; } set { regeneracionMana = value; } }
-        public double DañoCritico { get { return dañoCritico; } set { dañoCritico = value; } }
-
-        public double Experiencia { get { return experiencia; } set { experiencia = value; } }
-        public double Nivel { get { return nivel; } set { nivel = value; } }
+        public double Experiencia { get; set; }
+        public double Nivel { get; set; }
 
         public List<Habilidad> Habilidades { get; set; }
 
 
-
+        public int xp = 280;
+        public int patron = 380;
 
         public void Presentacion()
         {
@@ -43,14 +30,20 @@ namespace LeagueOfLeguends.Entidades
         }
 
 
-
         public void SubirNivel()
         {           
             while (Experiencia >= xp && Nivel >= 1 && Nivel <= 18)
             {               
-                Nivel = Nivel + 1;
+                Nivel += 1;
+                Vida += 50;
+                if (Mana != 0)
+                    Mana += 100;                   
+                Armadura += 5;
+                ResistenciaMagica += 1;
+                DañoAtaque += 3;                                        
+
                 xp += patron;
-                patron += 100;               
+                patron += 100;
             }          
         }
     }
