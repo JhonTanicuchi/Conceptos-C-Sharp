@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31410.357
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Arbol2", "Arbol2\Arbol2.csproj", "{704DB872-F4C2-452D-949A-1CAF9621F26C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Árbol3", "Árbol2-parte2\Árbol3.csproj", "{5AE84FFD-F622-4E95-A764-88F6886049D3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +11,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{704DB872-F4C2-452D-949A-1CAF9621F26C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{704DB872-F4C2-452D-949A-1CAF9621F26C}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{704DB872-F4C2-452D-949A-1CAF9621F26C}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{704DB872-F4C2-452D-949A-1CAF9621F26C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5AE84FFD-F622-4E95-A764-88F6886049D3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5AE84FFD-F622-4E95-A764-88F6886049D3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5AE84FFD-F622-4E95-A764-88F6886049D3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5AE84FFD-F622-4E95-A764-88F6886049D3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {288D524D-8EA5-4770-92CD-451AE78EEF73}
+		SolutionGuid = {E0BCB750-1D0D-4876-928D-708C4C27F6D4}
 	EndGlobalSection
 EndGlobal
