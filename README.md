@@ -1,8 +1,10 @@
-# League Of Leguends "Console"
-Programa C# de consola League Of Leguends
+# Tarea Árboles "Console"
+Programa C# de consola aplicando conocimientos básicos y POO.
 
-Simulación de videojuego "League Of Leguends", El programa permite seleccionar un campeón para simular un enfrentamiento 1 vs 1, se visualizará sus propiedades como: nombre, daño, rol, posición etc.
+# Simulación Neuronal
 
-Permitirá ingresar un valor de experiencia para visualizar el proceso de evolución de propiedades de cada campeón y mejoras por nivel.
+Simulación de red neuronal, Este programa permite generar una red neuronal estructural, con más de 1000 neuronas por cada zona cerebral, y simula el aprendizaje de conceptos buscando en toda la red neuronal parámetros que aprende en cada interacción.
 
-Nota: "Los archivos del programa se encuentran en la rama master". Programa en proceso...
+Se espera simular una red neuronal autónoma capaz de responder automáticamente.
+
+Programa en proceso…
