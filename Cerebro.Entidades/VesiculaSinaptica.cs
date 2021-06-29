@@ -13,7 +13,7 @@ namespace Cerebro.Entidades
         internal void CreacionNeurotransmisores()
         {
             Random num_Neurotransmisores = new Random();
-            int TotalNeurotransmisores = num_Neurotransmisores.Next(1, 1000);
+            int TotalNeurotransmisores = num_Neurotransmisores.Next(1, 100);
 
             for (int i = 0; Neurotransmisores.Count <= TotalNeurotransmisores; i++)
             {

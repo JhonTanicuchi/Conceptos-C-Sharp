@@ -16,7 +16,7 @@ namespace Cerebro.Entidades
         public void CreacionNeuronas()
         {           
             Random num_Neuronas = new Random();
-            int TotalNeuronas = num_Neuronas.Next(1, 1000);
+            int TotalNeuronas = num_Neuronas.Next(1, 500);
 
             for (int i = 0; Neuronas.Count <= TotalNeuronas; i++)
             {               

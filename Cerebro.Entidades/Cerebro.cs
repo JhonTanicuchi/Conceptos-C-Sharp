@@ -56,7 +56,7 @@ namespace Cerebro.Entidades
 
         public void MostrarRedNeuronal()
         {
-            throw new NotImplementedException();
+            
         }
     }
 }

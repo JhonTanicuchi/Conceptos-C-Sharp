@@ -81,12 +81,12 @@ namespace Cerebro.POO_Arbol_
                                                     {
                                                         new Neurotransmisor
                                                         {
-                                                            Informacion = "2",
+                                                            Informacion = "uno",
                                                             Propiedades = new List<Propiedad>
                                                             {
                                                                 new Propiedad
                                                                 {
-                                                                    Nombre = "dos"
+                                                                    Nombre = "1"
                                                                 }
                                                             }
                                                         }
@@ -135,7 +135,7 @@ namespace Cerebro.POO_Arbol_
                 Console.WriteLine("CEREBRO");
                 Console.WriteLine("SIMULACIÓN NEURONAL");
                 Console.WriteLine("OPCIONES");
-                Console.WriteLine("[1]Crear red neuronal => Tiempo estimado 5min");
+                Console.WriteLine("[1]Crear red neuronal");
                 Console.WriteLine("[2]Simular Aprendizaje");
                 Console.WriteLine("[3]Comprobar Aprendizaje");
                 Console.WriteLine("[4]Salir");
@@ -143,9 +143,12 @@ namespace Cerebro.POO_Arbol_
                 if (opcion == 1)
                 {
                     Console.Clear();
-                    Console.WriteLine("Creando red neuronal...");
+                    Console.WriteLine("CREANDO RED NEURONAL...");
+                    Console.WriteLine("Tiempo estimado 30s...");
                     cerebro.CrearRedNeuronal();
                     cerebro.MostrarRedNeuronal();
+                    Console.Clear();
+                    Console.WriteLine("Red neuronal creada con exito");
                 }
                 else if (opcion == 2)
                 {
