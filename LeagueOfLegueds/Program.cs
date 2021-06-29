@@ -10,24 +10,24 @@ namespace LeagueOfLeguends
         {
 
             
-            Console.WriteLine($"┌{new string('─', 60)}┐");
-            Console.WriteLine($"│{new string(' ', 60)}│");
-            Console.WriteLine($"│{new string(' ', 60)}│");
+            Console.WriteLine(string.Format("┌{0}┐", new string('─', 60)));
+            Console.WriteLine(string.Format("│{0}│", new string(' ', 60)));
+            Console.WriteLine(string.Format("│{0}│", new string(' ', 60)));
 
-            Console.WriteLine($"│ {"".PadRight(18)} {"╔══╗   ╔═════╗ ╔══╗  ".PadRight(39)} │");
-            Console.WriteLine($"│ {"".PadRight(18)} {"║  ║   ║     ║ ║  ║  ".PadRight(39)} │");
-            Console.WriteLine($"│ {"".PadRight(18)} {"║  ║   ║  ║  ║ ║  ║  ".PadRight(39)} │");
-            Console.WriteLine($"│ {"".PadRight(18)} {"║  ╚═╗ ║  ║  ║ ║  ╚═╗".PadRight(39)} │");
-            Console.WriteLine($"│ {"".PadRight(18)} {"║    ║ ║     ║ ║    ║".PadRight(39)} │");
-            Console.WriteLine($"│ {"".PadRight(18)} {"╚════╝ ╚═════╝ ╚════╝".PadRight(39)} │");
-            Console.WriteLine($"│{new string(' ', 60)}│");
-            Console.WriteLine($"│ {"".PadRight(15)} {"League Of Legueds «CONSOLE»".PadRight(42)} │");
-            Console.WriteLine($"│{new string(' ', 60)}│");
-            Console.WriteLine($"│ {"".PadRight(21)} {"» Jugar [ENTER]".PadRight(36)} │");
-            Console.WriteLine($"│ {"".PadRight(21)} {"» Salir [ESC]".PadRight(36)} │");
-            Console.WriteLine($"│{new string(' ', 60)}│");
-            Console.WriteLine($"│{new string(' ', 60)}│");
-            Console.WriteLine($"└{new string('─', 60)}┘");
+            Console.WriteLine(string.Format("│ {0} {1} │", "".PadRight(18), "╔══╗   ╔═════╗ ╔══╗  ".PadRight(39)));
+            Console.WriteLine(string.Format("│ {0} {1} │", "".PadRight(18), "║  ║   ║     ║ ║  ║  ".PadRight(39)));
+            Console.WriteLine(string.Format("│ {0} {1} │", "".PadRight(18), "║  ║   ║  ║  ║ ║  ║  ".PadRight(39)));
+            Console.WriteLine(string.Format("│ {0} {1} │", "".PadRight(18), "║  ╚═╗ ║  ║  ║ ║  ╚═╗".PadRight(39)));
+            Console.WriteLine(string.Format("│ {0} {1} │", "".PadRight(18), "║    ║ ║     ║ ║    ║".PadRight(39)));
+            Console.WriteLine(string.Format("│ {0} {1} │", "".PadRight(18), "╚════╝ ╚═════╝ ╚════╝".PadRight(39)));
+            Console.WriteLine(string.Format("│{0}│", new string(' ', 60)));
+            Console.WriteLine(string.Format("│ {0} {1} │", "".PadRight(15), "League Of Legueds «CONSOLE»".PadRight(42)));
+            Console.WriteLine(string.Format("│{0}│", new string(' ', 60)));
+            Console.WriteLine(string.Format("│ {0} {1} │", "".PadRight(21), "» Jugar [ENTER]".PadRight(36)));
+            Console.WriteLine(string.Format("│ {0} {1} │", "".PadRight(21), "» Salir [ESC]".PadRight(36)));
+            Console.WriteLine(string.Format("│{0}│", new string(' ', 60)));
+            Console.WriteLine(string.Format("│{0}│", new string(' ', 60)));
+            Console.WriteLine(string.Format("└{0}┘", new string('─', 60)));
             
             
 
