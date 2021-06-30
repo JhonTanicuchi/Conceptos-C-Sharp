@@ -56,7 +56,7 @@ namespace LeagueOfLeguends
                 double Rango, 
                 double RecompensaOro, 
                 double RecompensaExperiencia, 
-                double Mana, 
+                int Mana, 
                 double RegeneracionMana, 
                 double Experiencia, 
                 double Nivel
@@ -71,8 +71,6 @@ namespace LeagueOfLeguends
             };
 
            
-
-            
             Console.Clear();
             Console.WriteLine($"┌{new string('─', 60)}┐");
             Console.WriteLine($"│{new string(' ', 60)}│");
@@ -114,7 +112,7 @@ namespace LeagueOfLeguends
                 Rol = campeones[IndiceCampeon - 1].Rol,
                 Posicion = campeones[IndiceCampeon - 1].Posicion,
                 Origen = campeones[IndiceCampeon - 1].Origen,
-                Frase = campeones[IndiceCampeon - 1].Frase,
+                Raza = campeones[IndiceCampeon - 1].Raza,             
                 Vida = campeones[IndiceCampeon - 1].Vida,
                 RegeneracionVida = campeones[IndiceCampeon - 1].RegeneracionVida,
                 Armadura = campeones[IndiceCampeon - 1].Armadura,
@@ -149,7 +147,7 @@ namespace LeagueOfLeguends
                 Rol = campeones[campeonAleatorio].Rol,
                 Posicion = campeones[campeonAleatorio].Posicion,
                 Origen = campeones[campeonAleatorio].Origen,
-                Frase = campeones[campeonAleatorio].Frase,
+                Raza = campeones[IndiceCampeon - 1].Raza,
                 Vida = campeones[campeonAleatorio].Vida,
                 RegeneracionVida = campeones[campeonAleatorio].RegeneracionVida,
                 Armadura = campeones[campeonAleatorio].Armadura,
