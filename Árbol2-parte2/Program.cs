@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 
 namespace Árbol3
 {
@@ -45,6 +46,45 @@ namespace Árbol3
                 }
             };
 
+
+            Nodo raiz1 = new Nodo()
+            {
+                Valor = "a",
+                Hijos =
+                {
+                    new Nodo
+                    {
+                        Valor = "p1",
+                        Hijos =
+                        {
+                            new Nodo
+                            {
+                                Valor = "h1"
+                            },
+                            new Nodo
+                            {
+                                Valor = "h2",
+                                Hijos =
+                                {
+                                    new Nodo
+                                    {
+                                        Valor = "h1"
+                                    },
+                                    new Nodo
+                                    {
+                                        Valor = "h2"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    new Nodo
+                    {
+                        Valor = "p2"
+                    }
+                }
+            };
+
             //Resultado esperado
             //=> (8 + 5) * (7 - 4) = 39 notación infija
             //=> * (+ 8 5) (- 7 4) = 39 notación prefija
@@ -60,6 +100,23 @@ namespace Árbol3
             Console.WriteLine(manejadorArbol.ImprimirArbol(raiz, Notacion.Infijo));
             Console.WriteLine(manejadorArbol.ImprimirArbol(raiz, Notacion.Prefijo));
             Console.WriteLine(manejadorArbol.ImprimirArbol(raiz, Notacion.Postfijo));
+
+            Console.WriteLine($"Número de hojas: {manejadorArbol.NumeroHojas(raiz1)}");
+            Console.WriteLine($"Número de nodos: {manejadorArbol.NumeroNodos(raiz1)}");
+            Console.WriteLine($"Número de niveles: {manejadorArbol.NumeroNiveles(raiz1)}");
+
+            //NAVEGACION HORIZONTAL
+
+            Console.WriteLine(manejadorArbol.NavegacionHorizontal(raiz, "3"));
+
+
+            //Queue queue = new Queue();
+            //queue.Enqueue(new Nodo());
+            //Nodo nodo = (Nodo)queue.Dequeue(); //Coloca Atras
+            //Nodo nodo1 = (Nodo)queue.Peek(); // Saca Adelante
+
+            //1 7 15
+            //7 15
         }
     }
 }

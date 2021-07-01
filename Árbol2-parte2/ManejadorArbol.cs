@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace Árbol3
@@ -68,6 +70,74 @@ namespace Árbol3
                 Notacion.Postfijo => $"({ImprimirArbol(nodo.Hijos[0], notacion)} {ImprimirArbol(nodo.Hijos[1], notacion)} {nodo.Valor})",
                 _ => "Tipo de notación no imprlementada",
             };
+        }
+
+        internal int NumeroHojas(Nodo nodo)
+        {
+            if (SoyHoja(nodo))    
+                return 1;
+
+            int totalHojas = 0;
+            foreach (var hijoActual in nodo.Hijos)
+            {
+                totalHojas += NumeroHojas(hijoActual);
+            }
+            return totalHojas;
+        }
+
+        internal int NumeroNodos(Nodo nodo)
+        {
+            if (SoyHoja(nodo))
+                return 1;
+
+            int totalNodos = 0;
+            foreach (var nodoActual in nodo.Hijos)
+            {
+                totalNodos += NumeroNodos(nodoActual);
+            }
+            return totalNodos + 1;
+        }
+
+        internal int NumeroNiveles(Nodo nodo)
+        {
+            if (nodo == null)
+                return 0;
+            
+            var nivel = 0;
+            foreach (var nodoActual in nodo.Hijos)
+            {
+                var nivelActual = NumeroNiveles(nodoActual);
+                if (nivel < nivelActual)
+                    nivel = nivelActual;
+            }
+            return ++nivel;
+        }
+
+        private bool SoyHoja(Nodo nodo)
+        {
+            return !nodo.Hijos.Any();
+        }
+
+
+        public string NavegacionHorizontal(Nodo nodo, string valor) {
+            Queue<Nodo> colaAuxiliar = new LinkedList<Nodo>();
+            colaAuxiliar.Enqueue(new Nodo());          
+            colaAuxiliar.add(nodo);
+
+            while(colaAuxiliar.Count != 0) {
+                nodo = colaAuxiliar.poll();
+                Console.WriteLine("Valor del Nodo :" + nodo.Valor);
+                if (nodo.Valor == valor)
+                {
+                    return nodo.Valor;
+                }
+                else
+                {
+                    colaAuxiliar.add(nodo.Hijos[0]);
+                    colaAuxiliar.add(nodo.Hijos[1]);
+                }
+            }
+            return "No existe";
         }
     }
 }
