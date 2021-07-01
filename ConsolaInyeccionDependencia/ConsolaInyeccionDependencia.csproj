@@ -3,11 +3,11 @@
   <PropertyGroup>
     <OutputType>Exe</OutputType>
     <TargetFramework>net5.0</TargetFramework>
-    <RootNamespace>Cerebro.POO_Arbol_</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Cerebro.Entidades\Cerebro.Entidades.csproj" />
+    <ProjectReference Include="..\Abstracciones\Abstracciones.csproj" />
+    <ProjectReference Include="..\Inplementaciones\Inplementaciones.csproj" />
   </ItemGroup>
 
 </Project>
