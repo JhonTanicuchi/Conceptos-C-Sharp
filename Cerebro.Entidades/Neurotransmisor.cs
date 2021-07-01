@@ -15,14 +15,20 @@ namespace Cerebro.Entidades
         public string ComunicacionNeuronal(string concepto)
         {
             var recuerdo = "";
-            if (Informacion == concepto)
+            foreach (Propiedad propiedadActual in Propiedades)
             {
-                foreach (Propiedad propiedadActual in Propiedades)
+                if (Informacion == concepto)
                 {
                     recuerdo = propiedadActual.Nombre;
                 }
             }
+
             return recuerdo;
+        }
+
+        internal int TotalNeurotransmisores()
+        {
+            return 1;
         }
     }
 }

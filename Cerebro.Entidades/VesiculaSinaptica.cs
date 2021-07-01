@@ -22,47 +22,23 @@ namespace Cerebro.Entidades
                 );
             }
         }
-
-        internal void Aprender(string conocimiento)
+     
+        internal void Aprender(string[] conocimiento)
         {
-            string[] definiciones = conocimiento.Split(" "); ;
-                
-            if (definiciones.Length == 2)
-            {
-                var nuevoNeurotransmisor = new Neurotransmisor
+            Neurotransmisores.Add(
+                new Neurotransmisor
                 {
-                    Informacion = definiciones[0],
+                    Informacion = conocimiento[0],
                     Propiedades = new List<Propiedad>
                     {
                         new Propiedad
                         {
-                            Nombre = definiciones[1]
+                            Nombre = conocimiento[1]
                         }
-
                     }
-                };
-                Neurotransmisores.Add(
-                    nuevoNeurotransmisor
-                );
-            }
-            else
-            {               
-                var nuevoNeurotransmisor1 = new Neurotransmisor
-                {
-                    Informacion = conocimiento,
-                    Propiedades = new List<Propiedad>
-                    {
-                        new Propiedad
-                        {
-                            Nombre = definiciones[0]
-                        }
-
-                    }
-                };
-                Neurotransmisores.Add(
-                    nuevoNeurotransmisor1
-                );
-            }
+                }
+            );
+            
         }
 
         internal string ComunicacionNeuronal(string concepto)
@@ -81,13 +57,21 @@ namespace Cerebro.Entidades
             foreach(Neurotransmisor neurotransmisorActual in Neurotransmisores)
             {                                       
                 if (neurotransmisorActual.Informacion == solicitud)
-                {                   
-                    return neurotransmisorActual.Informacion;
+                {
+                    recuerdo = neurotransmisorActual.Informacion;
                 }
             }
             return recuerdo;
         }
 
-        
+        internal int TotalNeurotransmisores()
+        {
+            int totalNeurotransmisores = 0;
+            foreach (Neurotransmisor neurotransmisorActual in Neurotransmisores)
+            {
+                totalNeurotransmisores += neurotransmisorActual.TotalNeurotransmisores();
+            }
+            return totalNeurotransmisores;
+        }
     }
 }

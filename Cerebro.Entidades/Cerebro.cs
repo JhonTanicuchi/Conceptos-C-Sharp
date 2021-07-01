@@ -9,54 +9,68 @@ namespace Cerebro.Entidades
     public class CerebroHumano
     { 
         public int CerebroId { get; set; } = 1;
-        public Hemisferio HemisferioIzquierdo{ get; set; }
-        public Hemisferio HemisferioDerecho{ get; set; }
+        public List<Hemisferio> Hemisferios { get; set; } = new List<Hemisferio>();
 
         public void CrearRedNeuronal()
         {
-            HemisferioIzquierdo.CreacionNeuronas();
-            HemisferioDerecho.CreacionNeuronas();                
+            foreach (Hemisferio hemisferioActual in Hemisferios)
+            {
+                hemisferioActual.CreacionNeuronas();
+            }                         
         }
 
         public void Aprender(string conocimiento)
         {
-            HemisferioIzquierdo.Aprender(conocimiento);
+            Hemisferios[1].Aprender(conocimiento);
         }
 
         public string Recordar(string solicitud)
         {      
-            var recuerdo = HemisferioIzquierdo.Recordar(solicitud);
+            var recuerdo = Hemisferios[1].Recordar(solicitud);
+            var respuesta = "";
+            if (recuerdo == solicitud)
+            {
+                respuesta = ComunicacionNeuronal(recuerdo);
+            }
+
             if (recuerdo == "")
             {
-                recuerdo = HemisferioDerecho.Recordar(solicitud);
-            }
-            else if (recuerdo == solicitud)
-            {
-                recuerdo = ComunicacionNeuronal(recuerdo);
-            }
-            else
-            {
-                recuerdo = $"¿Qué es {solicitud}?";
+                respuesta = $"¿Qué es {solicitud}?";
             }
             
-            return recuerdo;
+            return respuesta;
         }
 
         internal string ComunicacionNeuronal(string concepto)
         {
-            var recuerdo = HemisferioIzquierdo.ComunicacionNeuronal(concepto);
-            if (recuerdo == "")
+            var recuerdo = "";
+            foreach (Hemisferio hemisferioActual in Hemisferios)
             {
-                recuerdo = HemisferioDerecho.ComunicacionNeuronal(concepto);
-            }
-
+                recuerdo += hemisferioActual.ComunicacionNeuronal(concepto);
+            }              
             return recuerdo;
-
         }
 
         public void MostrarRedNeuronal()
-        {
-            
+        {           
+            int totalNeuornas = 0;
+            int totalNeurotransmisores = 0;
+            Console.WriteLine($"┌{new string('─', 36)}┐");
+            Console.WriteLine(string.Format("│{0}│", $"Hemisferios: {Hemisferios.Count}".PadRight(36)));
+            foreach (Hemisferio hemisferioActual in Hemisferios)
+            {
+                Console.WriteLine($"│{new string('─', 36)}│");
+                Console.WriteLine(string.Format("│{0} {1}│", "".PadRight(7), hemisferioActual.Nombre.PadRight(28)));
+                Console.WriteLine($"│{new string('─', 36)}│");
+
+                hemisferioActual.MostrarRedNeuronal();
+                totalNeuornas += hemisferioActual.TotalNeuronas();
+                totalNeurotransmisores += hemisferioActual.TotalNeurotransmisores();
+            }
+            Console.WriteLine($"├{new string('─', 36)}┤");
+            Console.WriteLine(string.Format("│{0} {1}│", "Neuronas Totales:".PadRight(26), $"{totalNeuornas}".PadRight(9)));
+            Console.WriteLine(string.Format("│{0} {1}│", "Neurotransmisores Totales:".PadRight(26), $"{totalNeurotransmisores}".PadRight(9)));
+            Console.WriteLine($"└{new string('─', 36)}┘");
         }
     }
 }

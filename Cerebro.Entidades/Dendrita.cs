@@ -27,7 +27,7 @@ namespace Cerebro.Entidades
             }
         }
 
-        internal void Aprender(string conocimiento)
+        internal void Aprender(string[] conocimiento)
         {                   
             var vesiculaSinaptica = new VesiculaSinaptica { };
             VesiculasSinapticas.Add(
@@ -54,6 +54,16 @@ namespace Cerebro.Entidades
                 recuerdo = vesiculaActual.ComunicacionNeuronal(concepto);
             }
             return recuerdo;
+        }
+
+        internal int TotalNeurotransmisores()
+        {
+            int totalNeurotransmisores = 0;
+            foreach (VesiculaSinaptica vesiculaActual in VesiculasSinapticas)
+            {
+                totalNeurotransmisores += vesiculaActual.TotalNeurotransmisores();
+            }
+            return totalNeurotransmisores;
         }
     }
 }

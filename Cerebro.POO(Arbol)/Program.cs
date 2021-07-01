@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Threading;
 using Cerebro.Entidades;
 
 namespace Cerebro.POO_Arbol_
@@ -10,124 +11,68 @@ namespace Cerebro.POO_Arbol_
         {
             var cerebro = new CerebroHumano
             {
-                HemisferioIzquierdo = new Hemisferio
+                Hemisferios = new List<Hemisferio>
                 {
-                    Zonas = new List<Zona>
+                    new Hemisferio
                     {
-                        new Zona
+                        Nombre = "Hemisferio Izquierdo",
+                        Zonas = new List<Zona>
                         {
-                            Nombre = "ZonaVizual"                                                  
-                        },
-                        new Zona
-                        {
-                            Nombre = "ZonaSenzorial"
-
-                        },
-                        new Zona
-                        {
-                            Nombre = "ZonaMotora"
-
-                        },
-                        new Zona
-                        {
-                            Nombre = "ZonaLenguaje"
-
-                        },
-                        new Zona
-                        {
-                            Nombre = "ZonaAsociativa",
-                            Neuronas = new List<Neurona>
+                            new Zona
                             {
-                                new Neurona
-                                {
-                                    Dendritas = new List<Dendrita>
-                                    {
-                                        new Dendrita
-                                        {
-                                            VesiculasSinapticas = new List<VesiculaSinaptica>
-                                            {
-                                                new VesiculaSinaptica
-                                                {
-                                                    Neurotransmisores = new List<Neurotransmisor>
-                                                    {
-                                                        new Neurotransmisor
-                                                        {
-                                                            Informacion = "1",
-                                                            Propiedades = new List<Propiedad>
-                                                            {
-                                                                new Propiedad
-                                                                {
-                                                                    Nombre = "uno"
-                                                                }
-                                                            }
-                                                        }
-                                                    }
-                                                }
-                                            }
-                                        }
-                                    }
-                                },
-                                new Neurona
-                                {
-                                    Dendritas = new List<Dendrita>
-                                    {
-                                        new Dendrita
-                                        {
-                                            VesiculasSinapticas = new List<VesiculaSinaptica>
-                                            {
-                                                new VesiculaSinaptica
-                                                {
-                                                    Neurotransmisores = new List<Neurotransmisor>
-                                                    {
-                                                        new Neurotransmisor
-                                                        {
-                                                            Informacion = "uno",
-                                                            Propiedades = new List<Propiedad>
-                                                            {
-                                                                new Propiedad
-                                                                {
-                                                                    Nombre = "1"
-                                                                }
-                                                            }
-                                                        }
-                                                    }
-                                                }
-                                            }
-                                        }
-                                    }
-                                }
+                                Nombre = "Zona Vizual"
+                            },
+                            new Zona
+                            {
+                                Nombre = "Zona Senzorial"
+
+                            },
+                            new Zona
+                            {
+                                Nombre = "Zona Motora"
+
+                            },
+                            new Zona
+                            {
+                                Nombre = "Zona Lenguaje"
+
+                            },
+                            new Zona
+                            {
+                                Nombre = "Zona Asociativa"                           
                             }
                         }
-                    }
-                },
-                HemisferioDerecho = new Hemisferio
-                {
-                    Zonas = new List<Zona>
+                    },
+                    new Hemisferio
                     {
-                        new Zona
+                        Nombre = "Hemisferio Derecho",
+                        Zonas = new List<Zona>
                         {
-                            Nombre = "ZonaVizual"
-                        },
-                        new Zona
-                        {
-                            Nombre = "ZonaSenzorial"
+                            new Zona
+                            {
+                                Nombre = "Zona Vizual"
+                            },
+                            new Zona
+                            {
+                                Nombre = "Zona Senzorial"
 
-                        },
-                        new Zona
-                        {
-                            Nombre = "ZonaMotora"
+                            },
+                            new Zona
+                            {
+                                Nombre = "Zona Motora"
 
-                        },                                            
-                        new Zona
-                        {
-                            Nombre = "ZonaAsociativa"
+                            },
+                            new Zona
+                            {
+                                Nombre = "Zona Asociativa"
 
+                            }
                         }
                     }
                 }
             };
 
-            
+
             bool opcionCheck = true;
             do
             {
@@ -139,18 +84,23 @@ namespace Cerebro.POO_Arbol_
                 Console.WriteLine("[2]Simular Aprendizaje");
                 Console.WriteLine("[3]Comprobar Aprendizaje");
                 Console.WriteLine("[4]Salir");
-                int opcion = int.Parse(Console.ReadLine());
-                if (opcion == 1)
+                var opcion = Console.ReadLine();
+                if (opcion == "1")
                 {
                     Console.Clear();
-                    Console.WriteLine("CREANDO RED NEURONAL...");
-                    Console.WriteLine("Tiempo estimado 30s...");
+                    Console.WriteLine(string.Format("{0}", "CREANDO RED NEURONAL...".PadLeft(30)));
+                    Console.WriteLine("Tiempo estimado: 2 min");
                     cerebro.CrearRedNeuronal();
-                    cerebro.MostrarRedNeuronal();
                     Console.Clear();
-                    Console.WriteLine("Red neuronal creada con exito");
+                    Console.WriteLine("RED NEURONAL CREADA CON EXITO!!");
+                    Thread.Sleep(TimeSpan.FromSeconds(3));
+                    Console.Clear();
+                    Console.WriteLine(string.Format("{0}", "RED NEURONAL".PadLeft(25)));
+                    cerebro.MostrarRedNeuronal();
+                    Console.WriteLine("Presione una tecla para finalizar...");
+                    Console.ReadLine();
                 }
-                else if (opcion == 2)
+                else if (opcion == "2")
                 {
                     bool aprendercheck = true;
                     do
@@ -170,14 +120,14 @@ namespace Cerebro.POO_Arbol_
 
                     } while (aprendercheck == true);
                 }
-                else if (opcion == 3)
+                else if (opcion == "3")
                 {
                     bool comprobarcheck = true;
                     do
                     {
                         Console.Clear();
                         Console.WriteLine("Comprobar Aprendizaje");
-                        Console.WriteLine("Ingresa cualquier palabra, letra o numero, con su concepto. Ejemplo: [1 uno]");
+                        Console.WriteLine("Ingresa cualquier palabra, letra, numero o concepto. Para confirmar Algun Aprendizaje");
                         string recordar = Console.ReadLine();
                         Console.Clear();
                         Console.WriteLine(cerebro.Recordar(recordar));
@@ -190,10 +140,15 @@ namespace Cerebro.POO_Arbol_
                         }
                     } while (comprobarcheck == true);
                 }
-                else if (opcion == 4)
+                else if (opcion == "4")
                 {
                     Console.Clear();
                     opcionCheck = false;
+                }
+                else
+                {
+                    Console.Clear();
+                    opcionCheck = true;
                 }
             }
             while (opcionCheck == true);

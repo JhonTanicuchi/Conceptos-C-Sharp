@@ -38,7 +38,7 @@ namespace Cerebro.Entidades
             return recuerdo;
         }
 
-        internal void Aprender(string conocimiento)               
+        internal void Aprender(string[] conocimiento)               
         {
             var nuevaDendrita = new Dendrita { };
             Dendritas.Add(
@@ -55,6 +55,21 @@ namespace Cerebro.Entidades
                 recuerdo = ramificacionActual.ComunicacionNeuronal(concepto);
             }
             return recuerdo;
+        }
+
+        internal int TotalNeuronas()
+        {
+            return 1;
+        }
+
+        internal int TotalNeurotransmisores()
+        {
+            int totalNeurotransmisores = 0;
+            foreach (Dendrita ramificacionActual in Dendritas)
+            {
+                totalNeurotransmisores += ramificacionActual.TotalNeurotransmisores();
+            }
+            return totalNeurotransmisores;
         }
     }
 }

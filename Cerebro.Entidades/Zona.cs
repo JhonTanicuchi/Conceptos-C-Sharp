@@ -32,32 +32,56 @@ namespace Cerebro.Entidades
             var recuerdo = "";
             foreach (Neurona neuronaActual in Neuronas)
             {
-                recuerdo = neuronaActual.Recordar(solicitud);
+                recuerdo += neuronaActual.Recordar(solicitud);
             }
             return recuerdo;
         }
 
         internal void Aprender(string conocimiento)
-        {
-            string[] definiciones = conocimiento.Split(" ");
+        {          
+            string[] definicion = conocimiento.Split(" ");
+            string[] concepto = conocimiento.Split(" ");
             
-            if (Recordar(definiciones[0]) != definiciones[0])
-            {
-                Neurona nuevaNeurona = new Neurona { };
-                Neuronas.Add(
-                    nuevaNeurona
-                );
-                nuevaNeurona.Aprender(conocimiento);
-            }
 
-            if (Recordar(definiciones[1]) != definiciones[1])
+            foreach (var palabra in definicion)
+            {              
+                if (Recordar(palabra) != palabra)
+                {                 
+                    Neurona nuevaNeurona = new Neurona { };
+                    Neuronas.Add(
+                        nuevaNeurona
+                    );
+                    nuevaNeurona.Aprender(concepto);
+                    var tmp = concepto[0];
+                    concepto[0] = concepto[1];
+                    concepto[1] = tmp;
+                }
+            }    
+        }
+
+        internal int TotalNeuronas()
+        {
+            int totalNeuronas = 0;
+            foreach (Neurona neuronaActual in Neuronas)
             {
-                Neurona nuevaNeurona = new Neurona { };
-                Neuronas.Add(
-                    nuevaNeurona
-                );
-                nuevaNeurona.Aprender(definiciones[1]);
+                totalNeuronas += neuronaActual.TotalNeuronas();
             }
+            return totalNeuronas;
+        }
+
+        internal int TotalNeurotransmisores()
+        {
+            int totalNeurotransmisores = 0;
+            foreach (Neurona neuronaActual in Neuronas)
+            {
+                totalNeurotransmisores += neuronaActual.TotalNeurotransmisores();
+            }
+            return totalNeurotransmisores;
+        }
+
+        internal void MostrarRedNeuronal()
+        {
+            Console.WriteLine(string.Format("│{0} {1} {2}│", $" {Nombre}:".PadRight(21), $"{Neuronas.Count}".PadRight(4), "Neuronas".PadRight(9)));                       
         }
 
         public string ComunicacionNeuronal(string concepto)
@@ -65,7 +89,7 @@ namespace Cerebro.Entidades
             var recuerdo = "";
             foreach (Neurona neuronaActual in Neuronas)
             {
-                recuerdo = neuronaActual.ComunicacionNeuronal(concepto);
+                recuerdo += neuronaActual.ComunicacionNeuronal(concepto);
             }
             return recuerdo;
         }

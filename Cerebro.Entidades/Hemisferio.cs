@@ -9,6 +9,7 @@ namespace Cerebro.Entidades
     public class Hemisferio
     {
         public int HemisferioId { get; set; } = 1;
+        public string Nombre { get; set; }
         public List<Zona> Zonas { get; set; } = new List<Zona>();
 
 
@@ -31,6 +32,7 @@ namespace Cerebro.Entidades
             foreach(Zona zonaActual in Zonas){
                 recuerdo = zonaActual.Recordar(solicitud);
             }
+            recuerdo = recuerdo.Replace(" ", String.Empty);
             return recuerdo;  
         }
 
@@ -42,6 +44,37 @@ namespace Cerebro.Entidades
                 recuerdo = zonaActual.ComunicacionNeuronal(concepto);
             }
             return recuerdo;
+        }
+
+        internal void MostrarRedNeuronal()
+        {
+            Console.WriteLine(string.Format("│{0}│", $"Zonas: { Zonas.Count}".PadRight(36)));
+            Console.WriteLine($"│{new string('·', 36)}│");
+
+            foreach (Zona zonaActual in Zonas)
+            {
+                zonaActual.MostrarRedNeuronal();             
+            }         
+        }
+
+        internal int TotalNeuronas()
+        {
+            int totalNeuronas = 0;
+            foreach (Zona zonaActual in Zonas)
+            {             
+                totalNeuronas += zonaActual.TotalNeuronas();
+            }
+            return totalNeuronas;
+        }
+
+        internal int TotalNeurotransmisores()
+        {
+            int totalNeurotransmisores = 0;
+            foreach (Zona zonaActual in Zonas)
+            {              
+                totalNeurotransmisores += zonaActual.TotalNeurotransmisores();
+            }
+            return totalNeurotransmisores;
         }
     }
 }
