@@ -1,10 +1,6 @@
-# Tarea Árboles "Console"
-Programa C# de consola aplicando conocimientos básicos y POO.
+# Excepciones "Console"
+Programa C# de consola.
 
-# Simulación Neuronal
+En este programa se aplican cocneptos basicos de excepciones con try catch.
 
-Simulación de red neuronal, Este programa permite generar una red neuronal estructural, con más de 1000 neuronas por cada zona cerebral, y simula el aprendizaje de conceptos buscando en toda la red neuronal parámetros que aprende en cada interacción.
-
-Se espera simular una red neuronal autónoma capaz de responder automáticamente.
-
-Programa en proceso…
+Este programa crea un archivo .xml en el disco local C, con ayuda de las excepciones se realiza la ejecución sin que surga ningun error en el intento.
