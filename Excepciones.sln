@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31410.357
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test.Herencia", "Test.Herencia\Test.Herencia.csproj", "{68E3B794-8FBB-427A-AF18-3486C8ED1D33}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Excepciones", "Excepciones\Excepciones.csproj", "{DD590920-1C63-4426-9081-D481E8BF0D51}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +11,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{68E3B794-8FBB-427A-AF18-3486C8ED1D33}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{68E3B794-8FBB-427A-AF18-3486C8ED1D33}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{68E3B794-8FBB-427A-AF18-3486C8ED1D33}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{68E3B794-8FBB-427A-AF18-3486C8ED1D33}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DD590920-1C63-4426-9081-D481E8BF0D51}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DD590920-1C63-4426-9081-D481E8BF0D51}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DD590920-1C63-4426-9081-D481E8BF0D51}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DD590920-1C63-4426-9081-D481E8BF0D51}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {289F5460-941F-43DF-850D-EB56CEF374FE}
+		SolutionGuid = {2A00AD6D-4C64-43BF-917F-22938BA6509D}
 	EndGlobalSection
 EndGlobal
