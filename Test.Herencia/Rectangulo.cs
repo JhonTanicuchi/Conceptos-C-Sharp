@@ -1,10 +1,10 @@
-﻿namespace ConsoleAppHerencia
+﻿namespace Test.Herencia
 {
-    class Rectangulo
+    class Rectangulo : Figura
     {
         public float Base { get; set; }
         public float Altura { get; set; }
-        public float Area()
+        public override float Area()
         {
             return Base * Altura;
         }

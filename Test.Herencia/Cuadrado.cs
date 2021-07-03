@@ -1,9 +1,7 @@
-﻿namespace ConsoleAppHerencia
+﻿namespace Test.Herencia
 {
     class Cuadrado : Rectangulo
     {     
-        //public float Lado { get; set; }
-
         float _base;
         public new float Base { 
             get 
