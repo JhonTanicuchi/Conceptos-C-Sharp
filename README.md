@@ -1,10 +1,6 @@
-# Tarea Árboles "Console"
+# Herencias "Console"
 Programa C# de consola aplicando conocimientos básicos y POO.
 
-# Simulación Neuronal
+En este programa se aplica conceptos basicos para un buen uso de herencias POO.
 
-Simulación de red neuronal, Este programa permite generar una red neuronal estructural, con más de 1000 neuronas por cada zona cerebral, y simula el aprendizaje de conceptos buscando en toda la red neuronal parámetros que aprende en cada interacción.
-
-Se espera simular una red neuronal autónoma capaz de responder automáticamente.
-
-Programa en proceso…
+Este programa calcula el area de figuras geometricas.
