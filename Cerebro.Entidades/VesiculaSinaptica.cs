@@ -58,7 +58,7 @@ namespace Cerebro.Entidades
             {                                       
                 if (neurotransmisorActual.Informacion == solicitud)
                 {
-                    recuerdo = neurotransmisorActual.Informacion;
+                    recuerdo += neurotransmisorActual.Informacion;
                 }
             }
             return recuerdo;
@@ -72,6 +72,33 @@ namespace Cerebro.Entidades
                 totalNeurotransmisores += neurotransmisorActual.TotalNeurotransmisores();
             }
             return totalNeurotransmisores;
+        }
+
+        internal void RelacionNeuronal(string conocimiento)
+        {
+            string[] definicion = conocimiento.Split(" ");
+
+            foreach (Neurotransmisor neurotransmisorActual in Neurotransmisores)
+            {
+                foreach (var conceptoActual in definicion)
+                {
+                    if (neurotransmisorActual.Informacion == conceptoActual)
+                    {
+                        foreach (var conocimientoActual in definicion)
+                        {
+                            if (neurotransmisorActual.Informacion != conocimientoActual)
+                            {
+                                neurotransmisorActual.Propiedades.Add(
+                                    new Propiedad
+                                    {
+                                        Nombre = conocimientoActual
+                                    }
+                                );
+                            }
+                        }
+                    }
+                }                           
+            }
         }
     }
 }

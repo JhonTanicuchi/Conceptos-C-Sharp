@@ -65,5 +65,13 @@ namespace Cerebro.Entidades
             }
             return totalNeurotransmisores;
         }
+
+        internal void RelacionNeuronal(string conocimiento)
+        {
+            foreach (VesiculaSinaptica vesiculaActual in VesiculasSinapticas)
+            {
+                vesiculaActual.RelacionNeuronal(conocimiento);
+            }
+        }
     }
 }

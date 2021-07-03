@@ -30,5 +30,7 @@ namespace Cerebro.Entidades
         {
             return 1;
         }
+
+        
     }
 }

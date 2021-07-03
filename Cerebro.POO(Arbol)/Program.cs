@@ -65,7 +65,6 @@ namespace Cerebro.POO_Arbol_
                             new Zona
                             {
                                 Nombre = "Zona Asociativa"
-
                             }
                         }
                     }
@@ -83,7 +82,8 @@ namespace Cerebro.POO_Arbol_
                 Console.WriteLine("[1]Crear red neuronal");
                 Console.WriteLine("[2]Simular Aprendizaje");
                 Console.WriteLine("[3]Comprobar Aprendizaje");
-                Console.WriteLine("[4]Salir");
+                Console.WriteLine("[4]Interactuar");
+                Console.WriteLine("[5]Salir");
                 var opcion = Console.ReadLine();
                 if (opcion == "1")
                 {
@@ -117,7 +117,6 @@ namespace Cerebro.POO_Arbol_
                         {
                             aprendercheck = false;
                         }
-
                     } while (aprendercheck == true);
                 }
                 else if (opcion == "3")
@@ -141,6 +140,24 @@ namespace Cerebro.POO_Arbol_
                     } while (comprobarcheck == true);
                 }
                 else if (opcion == "4")
+                {
+                    bool interaccioncheck = true;
+                    do
+                    {
+                        Console.Clear();
+                        Console.WriteLine("Interactua");
+                        Console.WriteLine("A continuación podras interactuar con la IA 'Para finalizar ingresa: exit'");
+                        string mensaje = Console.ReadLine();
+                        Console.Clear();
+                        //Console.WriteLine(cerebro.Interactuar(mensaje));
+
+                        if (mensaje == "exit")
+                        {
+                            interaccioncheck = false;
+                        }
+                    } while (interaccioncheck == true);
+                }
+                else if (opcion == "5")
                 {
                     Console.Clear();
                     opcionCheck = false;

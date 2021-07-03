@@ -10,8 +10,7 @@ namespace Cerebro.Entidades
     {
         public int NeuronaId { get; set; } = 1;
         public bool SeñalElectrica { get; set; } = true;
-        public List<Dendrita> Dendritas { get; set; } = new List<Dendrita>();
-        public List<Neurona> Neuronas { get; set; } = new List<Neurona>();
+        public List<Dendrita> Dendritas { get; set; } = new List<Dendrita>();     
 
 
         internal void CreacionDendritas()
@@ -70,6 +69,14 @@ namespace Cerebro.Entidades
                 totalNeurotransmisores += ramificacionActual.TotalNeurotransmisores();
             }
             return totalNeurotransmisores;
+        }
+
+        internal void RelacionNeuronal(string conocimiento)
+        {         
+            foreach (Dendrita ramificacionActual in Dendritas)
+            {
+                ramificacionActual.RelacionNeuronal(conocimiento);
+            }
         }
     }
 }

@@ -21,12 +21,12 @@ namespace Cerebro.Entidades
 
         public void Aprender(string conocimiento)
         {
-            Hemisferios[1].Aprender(conocimiento);
+            Hemisferios[0].Aprender(conocimiento);
         }
 
         public string Recordar(string solicitud)
         {      
-            var recuerdo = Hemisferios[1].Recordar(solicitud);
+            var recuerdo = Hemisferios[0].Recordar(solicitud);
             var respuesta = "";
             if (recuerdo == solicitud)
             {
