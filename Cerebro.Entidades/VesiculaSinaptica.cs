@@ -97,7 +97,7 @@ namespace Cerebro.Entidades
                             }
                         }
                     }
-                }                           
+                }
             }
         }
     }

@@ -19,7 +19,7 @@ namespace Cerebro.Entidades
             {
                 if (Informacion == concepto)
                 {
-                    recuerdo = propiedadActual.Nombre;
+                    recuerdo += $"{propiedadActual.Nombre} ";
                 }
             }
 

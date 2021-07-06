@@ -35,46 +35,34 @@ namespace Cerebro.Entidades
                 recuerdo += neuronaActual.Recordar(solicitud);
             }
             return recuerdo;
-        }
+        }     
 
         internal void Aprender(string conocimiento)
-        {
-            if (conocimiento.Contains("="))
-            {
-                conocimiento.Replace(" ", String.Empty);
-                string[] definicion = conocimiento.Split("=");
-                foreach (var item in definicion)
-                {
-                    item.Replace(" ", String.Empty);
-                }            
-            }
-            else
-            {
-                string[] definicion = conocimiento.Split(" ");
-                string[] concepto = conocimiento.Split(" ");
+        {          
+            string[] definicion = conocimiento.Split(" ");
+            string[] concepto = conocimiento.Split(" ");
 
-                foreach (var palabra in definicion)
+            foreach (var palabra in definicion)
+            {
+                if (Recordar(palabra) != palabra)
                 {
-                    if (Recordar(palabra) != palabra)
-                    {
-                        Neurona nuevaNeurona = new Neurona { };
-                        Neuronas.Add(
-                            nuevaNeurona
-                        );
-                        nuevaNeurona.Aprender(concepto);
-                        var tmp = concepto[0];
-                        concepto[0] = concepto[1];
-                        concepto[1] = tmp;
-                    }
-                    else
-                    {                   
-                        foreach (Neurona neuronaActual in Neuronas)
-                        {
-                          neuronaActual.RelacionNeuronal(conocimiento);
-                        }                     
-                    }
+                    Neurona nuevaNeurona = new() { };
+                    Neuronas.Add(
+                        nuevaNeurona
+                    );
+                    nuevaNeurona.Aprender(concepto);
+                    var tmp = concepto[0];
+                    concepto[0] = concepto[1];
+                    concepto[1] = tmp;
                 }
-            }
+                else
+                {                   
+                    foreach (Neurona neuronaActual in Neuronas)
+                    {
+                        neuronaActual.RelacionNeuronal(conocimiento);
+                    }                     
+                }
+            }        
         }
 
         internal int TotalNeuronas()
