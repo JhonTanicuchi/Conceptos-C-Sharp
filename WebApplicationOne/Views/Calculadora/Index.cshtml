@@ -1,0 +1,18 @@
+﻿@{
+    ViewData["Title"] = "Calculadora";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Calculadora</h1>
+    <form action="/calculadora/calcular" method="post">
+        <div class="form-group">
+            <input type="number" placeholder="Ingrese un número" name="numero_1"/>
+        </div>
+        <div class="form-group">
+            <input type="number" placeholder="Ingrese otro número" name="numero_2"/>
+        </div>
+        <div class="form-group">
+            <button type="submit" class="btn btn-primary">Calcular</button>
+        </div>
+    </form>
+</div>
