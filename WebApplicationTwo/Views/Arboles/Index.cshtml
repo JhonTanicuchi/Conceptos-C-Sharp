@@ -1,0 +1,39 @@
+﻿@model IEnumerable<WebApplicationTwo.Entities.Arbol>;
+    
+@using WebApplicationTwo.Entities;
+@{
+    ViewData["Title"] = "Lista de árboles";
+}
+<h4>Lista de Árboles</h4>
+<hr />
+@if (!Model.Any())
+{
+    <p>No hay Datos</p>
+    <br />
+}
+<a asp-action="create">Registrar un árbol</a>
+<table class="table table-light">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(m=>m.Nombre)
+            </th>
+            <th>
+                @Html.DisplayNameFor(m => m.ColorHoja)
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (Arbol arbol in Model)
+        {
+            <tr>
+                <td>
+                    @(arbol.Nombre)
+                </td>
+                <td>
+                    @(arbol.ColorHoja)
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
