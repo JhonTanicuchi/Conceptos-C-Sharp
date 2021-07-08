@@ -4,4 +4,5 @@ Aplicación Web en C#, MVC
 # Calculadora
 
 Aplicación Web que aplica la estructura MVC (Modelo, Vista, Controlador).
-Esta aplicación es una calculadora que permite ingresar dos valores para luego calcularlos.
+Esta aplicación permite ingresar datos de los siguientes objetos: Arboles, Regiones.
+Hace uso de base de datos SqlLite local.
