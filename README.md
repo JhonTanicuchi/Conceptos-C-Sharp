@@ -1,10 +1,8 @@
-# Tarea Árboles "Console"
-Programa C# de consola aplicando conocimientos básicos y POO.
+# Aplicación Web C#
+Aplicación Web en C#, MVC
 
-# Simulación Neuronal
+# Registro de datos en SqlLite
 
-Simulación de red neuronal, Este programa permite generar una red neuronal estructural, con más de 1000 neuronas por cada zona cerebral, y simula el aprendizaje de conceptos buscando en toda la red neuronal parámetros que aprende en cada interacción.
-
-Se espera simular una red neuronal autónoma capaz de responder automáticamente.
-
-Programa en proceso…
+Aplicación Web que aplica la estructura MVC (Modelo, Vista, Controlador).
+Esta aplicación permite ingresar datos y luego consultarlos y mostrarlos en la aplicacion web.
+Hace uso de base de datos SqlLite local.
