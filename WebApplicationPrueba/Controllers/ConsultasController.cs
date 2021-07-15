@@ -13,8 +13,14 @@ namespace WebApplicationPrueba.Controllers
         public ConsultasController(ApplicationDbContext aplicationDbContext)
         {
             _context = aplicationDbContext;
-
         }
+
+        public IEnumerable<Empleado> EmpleadosPaginados(int pagina, int registrosPorPagina )
+        {
+            var salto = (pagina -1) * registrosPorPagina;
+            return _context.Empleados.Skip(salto).Take(registrosPorPagina);
+        }
+
         public IEnumerable<Departamento> Departamentos()
         {
             return _context.Departamentos;
