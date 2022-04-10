@@ -85,6 +85,60 @@ namespace Árbol3
                 }
             };
 
+
+
+            Nodo raiz3 = new Nodo()
+            {
+                Valor = "1",
+                Hijos =
+                {
+                    new Nodo
+                    {
+                        Valor = "2",
+                        Hijos =
+                        {
+                            new Nodo
+                            {
+                                Valor = "4"
+                            },
+                            new Nodo
+                            {
+                                Valor = "5",
+                                Hijos =
+                                {
+                                    new Nodo
+                                    {
+                                        Valor = "8"                                  
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    new Nodo
+                    {
+                        Valor = "3",
+                        Hijos =
+                        {
+                            new Nodo
+                            {
+                                Valor = "6",
+                                Hijos =
+                                {
+                                    new Nodo
+                                    {
+                                        Valor = "9"                                  
+                                    }
+                                }
+                            },
+                            new Nodo
+                            {
+                                Valor = "7",
+                            }
+                        }
+                    }
+                }
+            };
+
             //Resultado esperado
             //=> (8 + 5) * (7 - 4) = 39 notación infija
             //=> * (+ 8 5) (- 7 4) = 39 notación prefija
@@ -107,9 +161,8 @@ namespace Árbol3
 
             //NAVEGACION HORIZONTAL
 
-            Console.WriteLine(manejadorArbol.NavegacionHorizontal(raiz, "3"));
-
-
+            //Console.WriteLine(manejadorArbol.NavegacionHorizontal(raiz, "3"));
+            Console.WriteLine($"Navegaion H: {raiz3.NavegacionH()}");
             //Queue queue = new Queue();
             //queue.Enqueue(new Nodo());
             //Nodo nodo = (Nodo)queue.Dequeue(); //Coloca Atras

@@ -118,26 +118,26 @@ namespace Árbol3
             return !nodo.Hijos.Any();
         }
 
+        
 
-        public string NavegacionHorizontal(Nodo nodo, string valor) {
-            Queue<Nodo> colaAuxiliar = new LinkedList<Nodo>();
-            colaAuxiliar.Enqueue(new Nodo());          
-            colaAuxiliar.add(nodo);
+        //public string NavegacionHorizontal(Nodo nodo, string valor) {
+        //    LinkedList<Nodo> colaAuxiliar = new LinkedList<Nodo>();                  
+        //    colaAuxiliar.AddLast(nodo);
 
-            while(colaAuxiliar.Count != 0) {
-                nodo = colaAuxiliar.poll();
-                Console.WriteLine("Valor del Nodo :" + nodo.Valor);
-                if (nodo.Valor == valor)
-                {
-                    return nodo.Valor;
-                }
-                else
-                {
-                    colaAuxiliar.add(nodo.Hijos[0]);
-                    colaAuxiliar.add(nodo.Hijos[1]);
-                }
-            }
-            return "No existe";
-        }
+        //    while(colaAuxiliar.Count != 0) {
+        //        Nodo nodo = colaAuxiliar.poll();
+        //        Console.WriteLine("Valor del Nodo :" + nodo.Valor);
+        //        if (nodo.Valor == valor)
+        //        {
+        //            return nodo.Valor;
+        //        }
+        //        else
+        //        {
+        //            colaAuxiliar.AddLast(nodo.Hijos[0]);
+        //            colaAuxiliar.AddLast(nodo.Hijos[1]);
+        //        }
+        //    }
+        //    return "";
+        
     }
 }
